@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şahmat Kulübü "Chess" - Hobi, Boş Zaman ve Eğlence İmkanı Mostbet</title>
+    <meta name="description"
+          content="Mostbet Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın. ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-48x48.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+      .open-sans {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: < weight >;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+      }
+
+
+      * {
+        box-sizing: Open Sans border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #09c6ff2e;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .chesscontainer {
+        max-width: 1440px;
+        margin: auto;
+        padding: 20px;
+      }
+
+
+      .chessabout-section,
+      .chessfeatures-section,
+      .chessstory-section,
+      .chesscharacters-section,
+      .chessbonuses-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chessabout-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chessfeature {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1;
+      }
+
+      .chessfeature img {
+        width: 100%;
+        height: auto;
+      }
+
+      .story-image, .characters1-image {
+        width: 40%;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      .chessfooter {
+        text-align: center;
+        padding: 10px;
+        background-color: #30a7f0;
+        color: white;
+      }
+
+
+      .chessheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #30a7f0;
+        color: white;
+      }
+
+      .chessheader h1 {
+        font-size: 2.5em;
+      }
+
+      .chessmenu ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      .chessmenu ul li {
+        margin-left: 20px;
+      }
+
+      .chessmenu ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .chesshero-section {
+        background: url('img/1various_artistic_and_realistic_image_3-photoaidcom-darken.jpg') no-repeat center center/cover;
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .chesshero-section h1 {
+        font-size: 2.5em;
+        color: #ffffff;
+      }
+
+      .chesshero-section p {
+        font-size: 1.2em;
+        color: #ffffff;
+      }
+
+      .chessbutton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #35ff91;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .chessheader {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .chessmenu ul {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .chessmenu ul li {
+          margin-left: 0px;
+          margin-bottom: 10px;
+        }
+
+        .chessheader h1 {
+          font-size: 2em;
+        }
+
+        .chessbutton {
+          padding: 8px 16px;
+        }
+
+        .chessabout-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+
+        .chessabout-content img {
+          width: 40%;
+        }
+
+
+        .story-image,
+        .characters1-image {
+          width: 100%;
+          margin: 15px 0;
+        }
+
+        .chessfeature {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+
+        .chessfeatures-section {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+
+      .chessslider {
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+      }
+
+      .slider-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slider-slide {
+        min-width: 100%;
+        transition: opacity 0.5s ease;
+      }
+
+      .slider-slide img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      .chessfeatures-inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .chessfeature {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1 1 300px;
+      }
+
+      .chessfeature img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      @media (max-width: 768px) {
+        .chessfeature {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+      }
+
+
+      .chessbutton {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #67ff89;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .chessbutton:hover {
+        background-color: #ffd700;
+        transform: scale(1.05);
+      }
+
+
+      .slider-prev, .slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.6);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      .chessfeatures-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+
+      .chesscharacters-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chesscharacters-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .characters1-image {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+      }
+
+
+      @media (max-width: 768px) {
+        .chesscharacters-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .characters1-image {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+
+      .chessstory-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chessstory-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .story-image {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+      }
+
+
+      @media (max-width: 768px) {
+        .chessstory-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .story-image {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+
+
+      .chessbutton-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+
+      .cookie-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 300px;
+        z-index: 1000;
+        display: none; /* Başlangıçta gizli */
+      }
+
+      .cookie-content {
+        text-align: center;
+      }
+
+      .cookie-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .cookie-button:hover {
+        background-color: #45a049;
+      }
+
+
+      .slider {
+        position: relative;
+        max-width: 1440px;
+        height: 350px;
+        overflow: hidden;
+        margin: auto;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 350px;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .slider {
+          height: 250px;
+        }
+      }
+
+
+      .map-container {
+        max-width: 1440px;
+        height: 300px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+
+      @media (max-width: 768px) {
+        .map-container {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .map-container {
+          height: 150px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+
+<div class="chesscontainer">
+    <header class="chessheader">
+        <h1>Satranç kulübü "Chess"</h1>
+        <nav class="chessmenu">
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Chess Hakkında</a></li>
+                <li><a href="policy.html">Gizlilik Politikası</a></li>
+                <li><a href="terms.html">Şartlar ve koşullar</a></li>
+                <li><a href="index.html#contact">İletişim</a></li>
+                <li><a href="#">+905324197776</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="chesscharacters-section">
+        <h1>Şartları ve Koşulları</h1>
+        <p>info@mostbet.fitlifefitnesscenter.com Kullanım Şartları ve Koşulları</p>
+        <p>Bu kullanım şartları ve koşulları (“Koşullar”), info@mostbet.fitlifefitnesscenter.com web sitesini (“Site”) ziyaret eden herkes (“Kullanıcı”) için geçerlidir.</p>
+        <h3>Kabul Edilme</h3>
+        <p>Siteyi ziyaret ederek veya kullanarak, Kullanıcı bu Koşulları kabul etmiş olur. Kullanıcı bu Koşullara uymadığı takdirde Siteyi kullanmamalıdır.</p>
+        <h3>Kullanım Hakları ve Sorumluluklar</h3>
+        <li>a. Kullanıcı, Siteyi yalnızca yasal amaçlar için kullanabilir.</li>
+        <li>b. Kullanıcı, Site üzerinde başkalarının haklarına zarar verecek, huzursuzluk çıkaracak veya yasa dışı faaliyetlerde bulunacak herhangi bir eylemden kaçınmalıdır.</li>
+        <h3>Gizlilik Politikas</h3>
+        <p>Siteye erişim ve kullanım, Kullanıcının gizlilik politikamızı kabul ettiği anlamına gelir. Daha fazla bilgi için lütfen gizlilik politikamızı inceleyiniz.</p>
+        <h3>Telif Hakkı ve İçerik</h3>
+        <li>a. Site üzerindeki tüm içerik ve materyaller telif hakkına tabidir. İzinsiz kullanımı yasaktır.</li>
+        <li>b. Kullanıcılar, Site üzerinde paylaştıkları içeriklerin telif haklarına sahip olduğunu beyan ederler. Site yönetimi, telif hakkı ihlalleri konusunda gereken adımları atma hakkını saklı tutar.</li>
+        <h3>Hizmet Değişiklikleri</h3>
+        <p>Site yönetimi, Siteyi herhangi bir zamanda önceden haber vermeden değiştirme veya sonlandırma hakkını saklı tutar.</p>
+        <h3>Sorumluluk Reddi</h3>
+        <p>Site yönetimi, Site üzerinde sunulan içeriklerin doğruluğu, güncelliği veya eksiksizliği konusunda herhangi bir garanti vermez. Kullanıcılar Siteyi kendi sorumlulukları altında kullanır.</p>
+        <h3>Bağlantılar</h3>
+        <p>Site, diğer web sitelerine bağlantılar içerebilir. Bu bağlantılar yalnızca kullanıcıların kolaylık sağlaması içindir. Bağlantı verilen sitelerin içeriği üzerinde kontrolümüz yoktur ve bu sitelerin içeriği veya kullanımıyla ilgili sorumluluk kabul etmeyiz.</p>
+        <h3>Uygulanabilir Kanunlar</h3>
+        <p>Bu Koşullar ve Site üzerindeki herhangi bir anlaşmazlık, Ukrayna yasalarına tabi olacaktır.</p>
+    </section>
+
+    <footer class="chessfooter" id="contact">
+        <p>&copy; 2024 Rasimpaşa, Rasimpaşa Mahallesi, Recaizade Sokak, No: 18/B, Recaizade Sk. no:18b, 34440
+            Kadıköy/İstanbul, Türkiye | +905324197776 | contact@mostbet.fitlifefitnesscenter.com</p>
+    </footer>
+</div>
+
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <p>Web sitemizde çerezler kullanıyoruz. Deneyiminizi iyileştirmek için çerez kullanımını kabul ediyorsunuz.</p>
+        <button id="accept-cookies" class="cookie-button">Kabul Et</button>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cookiePopup = document.getElementById("cookie-popup");
+        const acceptCookiesButton = document.getElementById("accept-cookies");
+
+        // Daha önce onay verilip verilmediğini kontrol et
+        if (!localStorage.getItem("cookiesAccepted")) {
+            cookiePopup.style.display = "block"; // Popup'ı göster
+        }
+
+        // "Kabul Et" butonuna tıklama olayı
+        acceptCookiesButton.addEventListener("click", function () {
+            localStorage.setItem("cookiesAccepted", "true"); // Onayı localStorage'da sakla
+            cookiePopup.style.display = "none"; // Popup'ı gizle
+        });
+    });
+
+
+</script>
+
+
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Şahmat Kulübü Chess",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Şahmat Kulübü Chess",
+        "description": "Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Şahmat Kulübü Chess",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Şahmat Kulübü Chess",
+        "description": "Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Şahmat Kulübü Chess"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>

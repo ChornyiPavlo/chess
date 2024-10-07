@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şahmat Kulübü "Chess" - Hobi, Boş Zaman ve Eğlence İmkanı Mostbet</title>
+    <meta name="description"
+          content="Mostbet Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın. ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-48x48.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+      .open-sans {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: < weight >;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+      }
+
+
+      * {
+        box-sizing: Open Sans border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #09c6ff2e;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .chesscontainer {
+        max-width: 1440px;
+        margin: auto;
+        padding: 20px;
+      }
+
+
+      .chessabout-section,
+      .chessfeatures-section,
+      .chessstory-section,
+      .chesscharacters-section,
+      .chessbonuses-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chessabout-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chessfeature {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1;
+      }
+
+      .chessfeature img {
+        width: 100%;
+        height: auto;
+      }
+
+      .story-image, .characters1-image {
+        width: 40%;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      .chessfooter {
+        text-align: center;
+        padding: 10px;
+        background-color: #30a7f0;
+        color: white;
+      }
+
+
+      .chessheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #30a7f0;
+        color: white;
+      }
+
+      .chessheader h1 {
+        font-size: 2.5em;
+      }
+
+      .chessmenu ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      .chessmenu ul li {
+        margin-left: 20px;
+      }
+
+      .chessmenu ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .chesshero-section {
+        background: url('img/1various_artistic_and_realistic_image_3-photoaidcom-darken.jpg') no-repeat center center/cover;
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .chesshero-section h1 {
+        font-size: 2.5em;
+        color: #ffffff;
+      }
+
+      .chesshero-section p {
+        font-size: 1.2em;
+        color: #ffffff;
+      }
+
+      .chessbutton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #35ff91;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .chessheader {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .chessmenu ul {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .chessmenu ul li {
+          margin-left: 0px;
+          margin-bottom: 10px;
+        }
+
+        .chessheader h1 {
+          font-size: 2em;
+        }
+
+        .chessbutton {
+          padding: 8px 16px;
+        }
+
+        .chessabout-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+
+        .chessabout-content img {
+          width: 40%;
+        }
+
+
+        .story-image,
+        .characters1-image {
+          width: 100%;
+          margin: 15px 0;
+        }
+
+        .chessfeature {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+
+        .chessfeatures-section {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+
+      .chessslider {
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+      }
+
+      .slider-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slider-slide {
+        min-width: 100%;
+        transition: opacity 0.5s ease;
+      }
+
+      .slider-slide img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      .chessfeatures-inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .chessfeature {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1 1 300px;
+      }
+
+      .chessfeature img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      @media (max-width: 768px) {
+        .chessfeature {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+      }
+
+
+      .chessbutton {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #67ff89;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .chessbutton:hover {
+        background-color: #ffd700;
+        transform: scale(1.05);
+      }
+
+
+      .slider-prev, .slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.6);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      .chessfeatures-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+
+      .chesscharacters-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chesscharacters-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .characters1-image {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+      }
+
+
+      @media (max-width: 768px) {
+        .chesscharacters-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .characters1-image {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+
+      .chessstory-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chessstory-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .story-image {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+      }
+
+
+      @media (max-width: 768px) {
+        .chessstory-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .story-image {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+
+
+      .chessbutton-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+
+      .cookie-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 300px;
+        z-index: 1000;
+        display: none; /* Başlangıçta gizli */
+      }
+
+      .cookie-content {
+        text-align: center;
+      }
+
+      .cookie-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .cookie-button:hover {
+        background-color: #45a049;
+      }
+
+
+      .slider {
+        position: relative;
+        max-width: 1440px;
+        height: 350px;
+        overflow: hidden;
+        margin: auto;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 350px;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .slider {
+          height: 250px;
+        }
+      }
+
+
+      .map-container {
+        max-width: 1440px;
+        height: 300px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+
+      @media (max-width: 768px) {
+        .map-container {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .map-container {
+          height: 150px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+
+<div class="chesscontainer">
+    <header class="chessheader">
+        <h1>Satranç kulübü "Chess"</h1>
+        <nav class="chessmenu">
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="#about">Chess Hakkında</a></li>
+                <li><a href="policy.html">Gizlilik Politikası</a></li>
+                <li><a href="terms.html">Şartlar ve koşullar</a></li>
+                <li><a href="#contact">İletişim</a></li>
+                <li><a href="#">+905324197776</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="chesshero-section">
+        <h1>Mostbet Hobi ve Eğlence Alanı Olarak Şahmat</h1>
+        <p>"Chess" Şahmat Kulübü, satranç tutkunlarınız için ideal bir buluşma noktasıdır. Burada sadece öğrenmekle
+            kalmaz, aynı zamanda satranç tutkunu insanlarla sosyalleşerek boş zamanlarınızı Mostbet gibi eğlenceli
+            platformlarla birlikte keyifli bir şekilde değerlendirebilirsiniz. Satranç, zihni keskinleştiren bir hobi
+            olarak bilinir ve aynı zamanda sosyal bir etkinlik olarak eğlencenin tadını çıkartmanızı sağlar.</p>
+        <a href="#about" class="chessbutton">daha fazlasını öğren</a>
+    </header>
+
+
+    <section class="chesscharacters-section">
+        <h2>Kulüp Hakkında</h2>
+        <div class="chesscharacters-content">
+            <p>"Chess Satranç Kulübü, stratejik düşünce sanatına değer veren ve becerilerini benzer düşünen bireylerle
+                geliştirmek isteyen herkes için eşsiz bir mekandır. Misyonumuz, satrancı her yaşta ve seviyede insana
+                erişilebilir ve ilgi çekici hale getirmektir. Ayrıca, kulübümüzde geçireceğiniz boş zamanlarınızı zihin
+                geliştirici aktivitelerle değerlendirirken, satrancın sunduğu keyifli eğlence atmosferinin tadını
+                çıkarabilirsiniz. Bunun yanı sıra, Mostbet gibi strateji odaklı platformlar da düşünme becerilerinizi
+                farklı yönlerden geliştirmenize katkıda bulunabilir."</p>
+            <img src="img/2.jpg" alt="Chess Mostbet" class="characters1-image">
+        </div>
+
+    </section>
+
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide active">
+                <img src="img/6a754112-b8a6-4d9c-950a-b5a0ccde2304.jpeg" alt="Chess Mostbet 1">
+            </div>
+            <div class="slide">
+                <img src="img/e9318ae3-c99d-4699-bd6f-2a57588b6daf.jpeg" alt="Chess Mostbet 2">
+            </div>
+
+        </div>
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </div>
+
+
+    <section class="chessfeatures-section">
+
+        <div class="chessfeatures-inner">
+            <div class="chessfeature">
+                <img src="img/3.jpg" alt="Chess 1">
+                <h3>Mostbet - Stratejik Düşüncenizin Yolu</h3>
+                <p>Mostbet’ı stratejik düşüncenizi geliştiren bir araç olarak düşünün. Şahmatın sunduğu imkanlar
+                    sayesinde, problem çözme becerileriniz ve analitik düşünceniz daha da güçlenecek. Stratejiler
+                    geliştirip bunları uygulamak, günlük yaşamda karşılaştığınız zorluklara karşı da sizi hazırlıklı
+                    hale getirecek. Ayrıca, bu süreçte boş zamanlarınızı verimli bir şekilde değerlendirip hem zihinsel
+                    bir eğlenceye dönüştürebilir hem de keyifli vakit geçirebilirsiniz.</p>
+            </div>
+            <div class="chessfeature">
+                <img src="img/4.jpg" alt="Chess 2">
+                <h3>Mostbet tarzında satrancı öğrenme ve geliştirme fırsatları</h3>
+                <p>Kulübümüz, her yaş ve seviyeden insanların kendilerini geliştirmesi için çeşitli eğitim programları
+                    sunar. Başlangıç seviyesinde olanlar için temel kurallar ve taktikler öğretilirken, ileri düzey
+                    oyuncular için strateji ve teori dersleri verilir. Böylece, satranç yeteneklerinizi her zaman bir
+                    üst seviyeye taşıyabilirsiniz. Ayrıca, bu süreçte boş zamanlarınızı verimli bir şekilde
+                    değerlendirip, satranç gibi zihin geliştirici aktivitelerle eğlence dolu anlar yaşayabilirsiniz.
+                    Bunun yanında, Mostbet gibi stratejik platformlar da düşünme becerilerinizi geliştirmenize yardımcı
+                    olabilir.</p>
+            </div>
+            <div class="chessfeature">
+                <img src="img/e9318ae3-c99d-4699-bd6f-2a57588b6daf.jpeg" alt="Chess Mostbet 3">
+                <h3>Dostluk Turnuvaları ve Etkinlikler</h3>
+                <p>"Chess" Şahmat Kulübü, düzenli olarak dostluk turnuvaları ve etkinlikler düzenler. Bu aktiviteler,
+                    hem rekabetçi bir ortamda kendinizi test etme hem de yeni arkadaşlar edinme fırsatı sunar. Boş
+                    zamanlarınızı dolu dolu geçirebileceğiniz bu etkinlikler, aynı zamanda keyifli bir eğlence
+                    kaynağıdır. Satranç gibi stratejik oyunlarla zihninizi geliştirirken, Mostbet gibi platformlarla da
+                    strateji yeteneklerinizi daha da ileri taşıyabilirsiniz. Bu deneyimler, şüphesiz ki hayata bakış
+                    açınızı zenginleştirecektir.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="chessbutton-container">
+        <a href="#about" class="chessbutton">daha fazlasını öğren</a>
+    </div>
+
+
+    <section id="about" class="chessabout-section">
+        <h2>Sosyal Bağlantılar ve Topluluk</h2>
+        <div class="chessabout-content">
+            <p>Şahmat kulübümüz, sadece tahtadaki mücadelelerin ötesine geçer. Burada, aynı ilgi alanına sahip
+                insanlarla tanışabilir, yeni dostluklar kurabilir ve sosyal çevrenizi genişletebilirsiniz. "Chess"
+                Şahmat Kulübü, hobi ve eğlence için bir araya gelen insanların oluşturduğu samimi ve ilham verici bir
+                topluluktur.</p>
+            <img src="img/aac4420c-ce9a-4062-836b-94d7334313c8.jpeg" alt="Chess Mostbet " style="
+    width: 40%;
+">
+        </div>
+
+    </section>
+
+    <div class="chessbutton-container">
+        <a href="#about" class="chessbutton">daha fazlasını öğren</a>
+    </div>
+
+
+    <section class="chessbonuses-section">
+        <h2>Etkinlikler ve Turnuvalar</h2>
+        <img src="img/a188fb98-86d7-45f9-bb38-3124d02af7ba.jpeg" alt="Chess" style="
+    width: 100%;
+">
+        <p>Haftalık Turnuvalar: Kulübün dostane atmosferinde güçlerinizi test etme ve yeni bağlantılar kurma fırsatı
+            sunar. Bu turnuvalar, boş zamanlarınızı verimli bir şekilde değerlendirmenizi sağlarken, aynı zamanda
+            satrancın sunduğu stratejik eğlenceyi de deneyimleme imkanı verir.
+
+            Açık Günler: İsteyen herkesin kulüp ile tanışabileceği, satranç oynayıp eğitmenlerimizle sohbet edebileceği
+            günlerdir. Satrançla hem keyifli vakit geçirebilir hem de stratejik düşünme becerilerinizi
+            geliştirebilirsiniz. Ayrıca, Mostbet gibi platformlar da strateji odaklı düşünce yapınızı başka alanlarda
+            kullanmanıza olanak tanıyabilir.</p>
+    </section>
+
+
+    <section class="chessstory-section">
+        <h2>Sonuç</h2>
+        <div class="chessstory-content">
+            <img src="img/6a754112-b8a6-4d9c-950a-b5a0ccde2304.jpeg" alt="Chess Mostbet" class="story-image">
+            <p>"Chess" Şahmat Kulübü olarak, şahmatın bir hobi, boş zaman etkinliği ve eğlence biçimi olarak sunduğu
+                fırsatları kaçırmamanızı öneriyoruz. Mostbet ile zihninizi açarken aynı zamanda harika zaman geçirmeniz
+                mümkün. Gelin, birlikte şahmat tahtasının tadını çıkaralım ve bu stratejik yolculuğa başlayalım!
+
+                Unutmayın, "Chess" Şahmat Kulübü kapılarını size her zaman açık tutuyor ve hobi, boş zaman değerlendirme
+                ve eğlencenin en iyi şekilde yaşanabileceği bir dünya sunuyor.</p>
+        </div>
+    </section>
+
+    <div class="chessbutton-container">
+        <a href="#about" class="chessbutton">daha fazlasını öğren</a>
+    </div>
+
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3274.1471246822757!2d29.02436817603982!3d40.99393597135257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab8696a4f1ea3%3A0x3bb7ffcc51699753!2zUmFzaW1wYcWfYSwgUmVjYWl6YWRlIFNrLiBObzoxOCBEOmIsIDM0NzE2IEthZMSxa8O2eS_EsHN0YW5idWwsIFTDvHJraXll!5e1!3m2!1sen!2sua!4v1728302462140!5m2!1sen!2sua"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+    <footer class="chessfooter" id="contact">
+        <p>&copy; 2024 Rasimpaşa, Rasimpaşa Mahallesi, Recaizade Sokak, No: 18/B, Recaizade Sk. no:18b, 34440
+            Kadıköy/İstanbul, Türkiye | +905324197776 | contact@mostbet.fitlifefitnesscenter.com</p>
+    </footer>
+</div>
+
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <p>Web sitemizde çerezler kullanıyoruz. Deneyiminizi iyileştirmek için çerez kullanımını kabul ediyorsunuz.</p>
+        <button id="accept-cookies" class="cookie-button">Kabul Et</button>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cookiePopup = document.getElementById("cookie-popup");
+        const acceptCookiesButton = document.getElementById("accept-cookies");
+
+        // Daha önce onay verilip verilmediğini kontrol et
+        if (!localStorage.getItem("cookiesAccepted")) {
+            cookiePopup.style.display = "block"; // Popup'ı göster
+        }
+
+        // "Kabul Et" butonuna tıklama olayı
+        acceptCookiesButton.addEventListener("click", function () {
+            localStorage.setItem("cookiesAccepted", "true"); // Onayı localStorage'da sakla
+            cookiePopup.style.display = "none"; // Popup'ı gizle
+        });
+    });
+
+
+</script>
+
+
+<script>
+
+
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        changeSlide(currentSlide + 1);
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        changeSlide(currentSlide - 1);
+    });
+
+    function changeSlide(newSlide) {
+        if (newSlide >= totalSlides) {
+            currentSlide = 0;
+        } else if (newSlide < 0) {
+            currentSlide = totalSlides - 1;
+        } else {
+            currentSlide = newSlide;
+        }
+
+        const slideWidth = -currentSlide * 100;
+        document.querySelector('.slides').style.transform = `translateX(${slideWidth}%)`;
+    }
+
+</script>
+
+
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Şahmat Kulübü Chess",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Şahmat Kulübü Chess",
+        "description": "Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Şahmat Kulübü Chess",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Şahmat Kulübü Chess",
+        "description": "Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Şahmat Kulübü Chess"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>

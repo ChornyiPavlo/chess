@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şahmat Kulübü "Chess" - Hobi, Boş Zaman ve Eğlence İmkanı Mostbet</title>
+    <meta name="description"
+          content="Mostbet Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın. ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+          rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-48x48.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+      .open-sans {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: < weight >;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+      }
+
+
+      * {
+        box-sizing: Open Sans border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #09c6ff2e;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .chesscontainer {
+        max-width: 1440px;
+        margin: auto;
+        padding: 20px;
+      }
+
+
+      .chessabout-section,
+      .chessfeatures-section,
+      .chessstory-section,
+      .chesscharacters-section,
+      .chessbonuses-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chessabout-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chessfeature {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1;
+      }
+
+      .chessfeature img {
+        width: 100%;
+        height: auto;
+      }
+
+      .story-image, .characters1-image {
+        width: 40%;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      .chessfooter {
+        text-align: center;
+        padding: 10px;
+        background-color: #30a7f0;
+        color: white;
+      }
+
+
+      .chessheader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #30a7f0;
+        color: white;
+      }
+
+      .chessheader h1 {
+        font-size: 2.5em;
+      }
+
+      .chessmenu ul {
+        list-style-type: none;
+        display: flex;
+      }
+
+      .chessmenu ul li {
+        margin-left: 20px;
+      }
+
+      .chessmenu ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .chesshero-section {
+        background: url('img/1various_artistic_and_realistic_image_3-photoaidcom-darken.jpg') no-repeat center center/cover;
+        padding: 100px 20px;
+        text-align: center;
+      }
+
+      .chesshero-section h1 {
+        font-size: 2.5em;
+        color: #ffffff;
+      }
+
+      .chesshero-section p {
+        font-size: 1.2em;
+        color: #ffffff;
+      }
+
+      .chessbutton {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #35ff91;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .chessheader {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .chessmenu ul {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .chessmenu ul li {
+          margin-left: 0px;
+          margin-bottom: 10px;
+        }
+
+        .chessheader h1 {
+          font-size: 2em;
+        }
+
+        .chessbutton {
+          padding: 8px 16px;
+        }
+
+        .chessabout-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+
+        .chessabout-content img {
+          width: 40%;
+        }
+
+
+        .story-image,
+        .characters1-image {
+          width: 100%;
+          margin: 15px 0;
+        }
+
+        .chessfeature {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+
+        .chessfeatures-section {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+
+      .chessslider {
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        height: 300px;
+      }
+
+      .slider-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slider-slide {
+        min-width: 100%;
+        transition: opacity 0.5s ease;
+      }
+
+      .slider-slide img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      .chessfeatures-inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .chessfeature {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1 1 300px;
+      }
+
+      .chessfeature img {
+        width: 100%;
+        height: auto;
+      }
+
+
+      @media (max-width: 768px) {
+        .chessfeature {
+          flex: 1 1 100%;
+          margin: 5px 0;
+        }
+      }
+
+
+      .chessbutton {
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #67ff89;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .chessbutton:hover {
+        background-color: #ffd700;
+        transform: scale(1.05);
+      }
+
+
+      .slider-prev, .slider-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.6);
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      .chessfeatures-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+
+      .chesscharacters-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chesscharacters-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .characters1-image {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+      }
+
+
+      @media (max-width: 768px) {
+        .chesscharacters-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .characters1-image {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+
+      .chessstory-section {
+        background-color: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chessstory-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .story-image {
+        width: 40%;
+        height: auto;
+        margin-left: 20px;
+      }
+
+
+      @media (max-width: 768px) {
+        .chessstory-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .story-image {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 15px;
+        }
+      }
+
+
+      .chessbutton-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+
+      .cookie-popup {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 300px;
+        z-index: 1000;
+        display: none; /* Başlangıçta gizli */
+      }
+
+      .cookie-content {
+        text-align: center;
+      }
+
+      .cookie-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .cookie-button:hover {
+        background-color: #45a049;
+      }
+
+
+      .slider {
+        position: relative;
+        max-width: 1440px;
+        height: 350px;
+        overflow: hidden;
+        margin: auto;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 350px;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .slider {
+          height: 250px;
+        }
+      }
+
+
+      .map-container {
+        max-width: 1440px;
+        height: 300px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+
+      @media (max-width: 768px) {
+        .map-container {
+          height: 200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .map-container {
+          height: 150px;
+        }
+      }
+    </style>
+</head>
+<body>
+
+
+<div class="chesscontainer">
+    <header class="chessheader">
+        <h1>Satranç kulübü "Chess"</h1>
+        <nav class="chessmenu">
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Chess Hakkında</a></li>
+                <li><a href="policy.html">Gizlilik Politikası</a></li>
+                <li><a href="terms.html">Şartlar ve koşullar</a></li>
+                <li><a href="index.html#contact">İletişim</a></li>
+                <li><a href="#">+905324197776</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="chesscharacters-section">
+        <h1>Gizlilik Politikası</h1>
+        <h3>1. İşlenmiş veriler</h3>
+        <p>1.1. Siteyi kullanarak kişisel verilerinizi toplamıyoruz.</p>
+        <p>1.2. Sitede toplanan tüm veriler
+            anonimleştirilmiş bir biçimde sağlanır ve alınır (bundan böyle “Anonim Veriler” olarak anılacaktır).</p>
+        <p>1.3. Anonim veriler, sizi tanımlamayan aşağıdaki bilgileri içerir:
+        <p>
+        <p>1.3.1. İsim veya telefon numarası
+            ve/veya e-posta adresi dahil olmak üzere Sitenin çevrimiçi formlarını ve program modüllerini kullanarak
+            kendiniz hakkında sağladığınız bilgiler.</p>
+        <p>1.3.2. Kullandığınız yazılımın ayarlarına bağlı olarak
+            otomatik modda anonimleştirilmiş biçimde aktarılan veriler.</p>
+        <p>1.4. Yönetim, Site kullanılarak toplanan
+            Anonimleştirilmiş Kullanıcı Verilerinin bileşimi için gereksinimler belirleme hakkına sahiptir.</p>
+        <p>1.5.
+            Belirli bilgiler zorunlu olarak işaretlenmemişse, sağlanması veya ifşası Kullanıcı tarafından kendi
+            takdirine bağlı olarak ve kendi inisiyatifiyle gerçekleştirilir.</p>
+        <p>1.6. İdare, Kullanıcının iyi
+            niyetle, ihtiyatlı davrandığına ve bu bilgileri güncel tutmak için her türlü çabayı gösterdiğine
+            inanarak,
+            sağlanan verilerin doğruluğunu ve Kullanıcının bu Politikaya uygun olarak işlenmesi için gerekli rızaya
+            sahip olup olmadığını doğrulamaz ve kullanımı için gerekli tüm izinleri alın.</p>
+        <p>1.7. Sitede üçüncü
+            taraf yazılım kullanma olasılığını kabul etmektesiniz, bunun sonucunda bu taraflar madde 1.3'te
+            belirtilen
+            verileri anonim bir biçimde alıp iletebilirler.</p>
+        <p>1.8. Üçüncü taraf yazılımı kullanarak
+            anonimleştirilmiş veri toplamanın bileşimi ve koşulları, doğrudan telif hakkı sahipleri tarafından
+            belirlenir ve şunları içerebilir:
+        <p>
+        <p>1.9. İdare, Anonimleştirilmiş Kullanıcı Verilerinin üçüncü şahıslar
+            tarafından kullanılması prosedüründen sorumlu değildir.</p>
+        <p>2. Veri işlemenin amaçları
+        <p>2.1. Yönetim,
+            verileri aşağıdaki amaçlar için kullanır:
+        <p>
+        <p>2.1.1. Gelen taleplerin işlenmesi ve Kullanıcı ile
+            iletişim;
+        <p>
+        <p>2.1.2. Reklam ve bilgi materyallerinin dağıtımı dahil bilgi hizmeti;
+        <p>
+        <p>2.1.3.
+            Pazarlama, istatistik ve diğer araştırmaları yapmak;
+        <p>
+        <p>2.1.4. Sitedeki reklam materyallerini hedefleme.</p>
+        <p>3.
+            Veri koruma gereksinimleri
+        <p>3.1. Yönetim, verileri depolar ve dahili kural ve düzenlemelere uygun olarak
+            yetkisiz erişime ve dağıtıma karşı korunmalarını sağlar.</p>
+        <p>3.2. Kullanıcı tarafından kamuya
+            açıklanmadıkça ve ayrıca Sitede kullanılan üçüncü şahısların teknoloji ve yazılımlarının veya Kullanıcı
+            tarafından kullanılan yazılımın ayarlarının açık bir değişime izin vermemesi haricinde alınan verilerle
+            ilgili olarak gizlilik korunur. bu kişiler ve/veya diğer internet katılımcıları ve kullanıcıları
+            ile.</p>
+        <p>3.3. Yönetim, iş kalitesini artırmak amacıyla, Site kullanımı kapsamında Kullanıcı tarafından
+            gerçekleştirilen işlemlere ilişkin günlük dosyalarını 1 (Bir) yıl süreyle saklama hakkına sahiptir.A.
+            Giriş
+        <p>
+        <p>1. Web sitemizin kullanıcılarının gizliliği bizim için çok önemlidir ve onu korumak için her
+            türlü çabayı gösteririz. Bu politika, kişisel bilgilerinizi nasıl kullandığımızı açıklar.</p>
+        <p>2. Bu
+            Politikanın hükümlerine uygun olarak web sitemizi ilk ziyaretinizde çerez kullanımımızı kabul ederek,
+            bir
+            sonraki ziyaretinizde çerez kullanmamıza izin vermiş olursunuz.</p>
+        <p>B. Kişisel verilerin
+            toplanması
+        <p>
+        <p>Aşağıdaki kişisel veri türleri toplanmaya, saklanmaya ve kullanıma tabidir:
+        <p>
+        <p>IP
+            adresiniz, coğrafi konumunuz, tarayıcı türünüz ve sürümünüz ve işletim sisteminiz dahil olmak üzere
+            bilgisayarınızla ilgili bilgiler;
+        <p>
+        <p>Yönlendirme kaynakları, ziyaret süreleri, görüntülenen sayfalar ve
+            site gezinme yolları dahil olmak üzere bu siteyi ziyaretiniz ve kullanımınızla ilgili bilgiler;
+        <p>
+        <p>Sitemize
+            kaydolmak için kullandığınız e-posta adresi ile ilgili bilgiler;
+        <p>
+        <p>Sitemizde profil oluştururken
+            girdiğiniz adınız, profil resminiz, cinsiyetiniz, doğum tarihiniz, medeni durumunuz, hobileriniz ve ilgi
+            alanlarınız, eğitiminiz ve iş yeriniz gibi bilgiler;
+        <p>
+        <p>E-postalarımıza ve/veya haber bültenlerimize
+            abone olduğunuzda sağladığınız adınız ve e-posta adresiniz gibi bilgiler;
+        <p>
+        <p>Sitemizdeki hizmetleri
+            kullanırken girdiğiniz bilgiler;
+        <p>
+        <p>Kullanım zamanı, sıklığı ve koşulları hakkında bilgiler de dahil
+            olmak üzere sitemizi kullandığınızda oluşturulan bilgiler;
+        <p>
+        <p>Adınız, adresiniz, telefon numaranız,
+            e-posta adresiniz ve kredi kartı bilgileriniz dahil olmak üzere, web sitemiz aracılığıyla tarafınızca
+            yapılan tüm satın alımlarınız, kullandığınız hizmetler veya yaptığınız işlemlerle ilgili bilgiler;
+        <p>
+        <p>Kullanıcı
+            adınız, profil resminiz ve gönderinizin içeriği dahil olmak üzere, çevrimiçi yayınlamak amacıyla
+            sitemizde
+            yayınladığınız bilgiler;
+        <p>
+        <p>Mesajın içeriği ve verilerin amacı dahil olmak üzere bize e-posta veya web
+            sitemiz aracılığıyla gönderdiğiniz herhangi bir iletişimde yer alan bilgiler;
+        <p>
+        <p>Bize gönderdiğiniz
+            diğer kişisel bilgiler.</p>
+        <p>Kişisel bilgileri bize üçüncü bir tarafa ifşa etmeden önce, bu bilginin bu
+            politikaya uygun olarak hem ifşa edilmesi hem de işlenmesi için o kişinin onayını almalısınız.</p>
+        <p>Kişisel
+            bilgileri bize üçüncü bir tarafa ifşa etmeden önce, bu bilginin bu politikaya uygun olarak hem ifşa
+            edilmesi
+            hem de işlenmesi için o kişinin onayını almalısınız.</p>
+        <p>B. Kişisel bilgilerinizin kullanımı
+        <p>
+        <p>Web
+            sitemiz aracılığıyla bize sağladığınız kişisel bilgiler, bu politikalarda veya sitenin ilgili
+            sayfalarında
+            belirtilen amaçlar için kullanılacaktır. Kişisel bilgilerinizi aşağıdaki amaçlarla kullanabiliriz:
+        <p>
+        <p>web
+            sitemizi ve işimizi işletmek;
+        <p>
+        <p>web sitemizi sizin için özelleştirin;
+        <p>
+        <p>web sitemizde mevcut olan
+            hizmetleri kullanmanıza izin verir;
+        <p>
+        <p>web sitemiz üzerinden satın alınan malları göndermek;
+        <p>
+        <p>web
+            sitemiz aracılığıyla satın alınan hizmetlerin sağlanması;
+        <p>
+        <p>mesajlar, faturalar ve ödeme hatırlatmaları
+            göndermek ve sizden ödeme almak;
+        <p>
+        <p>pazarlama dışı ticari iletişimler göndermek;
+        <p>
+        <p>özellikle davet
+            ettiğiniz e-posta mesajlarını göndermek;
+        <p>
+        <p>sipariş ettiyseniz e-posta ile bir haber bülteni göndermek
+            (bize artık bizden haber bülteni almak istemediğinizi istediğiniz zaman bildirebilirsiniz)
+        <p>
+        <p>işlerimiz
+            veya ilginizi çekebileceğini düşündüğümüz özenle seçilmiş üçüncü şahısların işleri hakkında, ilanlar
+            yoluyla
+            veya buna açıkça izin verdiyseniz, e-posta göndererek veya benzer teknolojiler kullanarak pazarlama
+            iletişimleri göndermek (bize herhangi bir zamanda bildirebilirsiniz). artık pazarlama iletişimi almak
+            istemediğiniz zaman)
+        <p>
+        <p>üçüncü taraflara kullanıcılarımız hakkında istatistiksel bilgiler sağlamak
+            (ancak bu üçüncü taraflar bu verilerden herhangi bir bireysel kullanıcıyı tanımlayamaz).</p>
+        <p>web
+            sitemizle ilgili olarak tarafınızdan veya aleyhinizde yapılan talep ve şikayetlerin ele alınması;
+        <p>
+        <p>web
+            sitemizin güvenliğini sağlamak ve dolandırıcılığı önlemek için;
+        <p>
+        <p>web sitemizin kullanımını yöneten
+            hüküm ve koşullara uygunluğu doğrulamak için (web sitemizin özel mesajlaşma hizmeti aracılığıyla
+            gönderilen
+            özel mesajların izlenmesi dahil)
+        <p>
+        <p>başka amaçlar için.</p>
+        <p>Sitemizde yayınlanmak üzere kişisel
+            bilgilerinizi verdiyseniz, yayınlayacağız. Aksi takdirde, bu bilgileri bize vermiş olduğunuz lisansa
+            uygun
+            olarak kullanacağız.</p>
+    </section>
+
+    <footer class="chessfooter" id="contact">
+        <p>&copy; 2024 Rasimpaşa, Rasimpaşa Mahallesi, Recaizade Sokak, No: 18/B, Recaizade Sk. no:18b, 34440
+            Kadıköy/İstanbul, Türkiye | +905324197776 | contact@mostbet.fitlifefitnesscenter.com</p>
+    </footer>
+</div>
+
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <p>Web sitemizde çerezler kullanıyoruz. Deneyiminizi iyileştirmek için çerez kullanımını kabul ediyorsunuz.</p>
+        <button id="accept-cookies" class="cookie-button">Kabul Et</button>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const cookiePopup = document.getElementById("cookie-popup");
+        const acceptCookiesButton = document.getElementById("accept-cookies");
+
+        // Daha önce onay verilip verilmediğini kontrol et
+        if (!localStorage.getItem("cookiesAccepted")) {
+            cookiePopup.style.display = "block"; // Popup'ı göster
+        }
+
+        // "Kabul Et" butonuna tıklama olayı
+        acceptCookiesButton.addEventListener("click", function () {
+            localStorage.setItem("cookiesAccepted", "true"); // Onayı localStorage'da sakla
+            cookiePopup.style.display = "none"; // Popup'ı gizle
+        });
+    });
+
+
+</script>
+
+
+</body>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Şahmat Kulübü Chess",
+        "url": "",
+        "logo": "/favicon/favicon.ico"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WPHeader",
+        "headline": "Şahmat Kulübü Chess",
+        "description": "Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Şahmat Kulübü Chess",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "/favicon/favicon.ico"
+            }
+        }
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Şahmat Kulübü Chess",
+        "description": "Şahmat Kulübü Chess&quot; ile stratejik düşüncenizi geliştirirken hobi edin, boş zamanlarınızı en iyi şekilde değerlendirin ve eğlencenin keyfini çıkarın.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Şahmat Kulübü Chess"
+        },
+        "license": "A license document that applies to this content, typically indicated by URL"
+    }
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "",
+        "hasPart": [
+            {
+                "@type": "WebPage",
+                "name": "Home",
+                "url": ""
+            },
+            {
+                "@type": "WebPage",
+                "name": "Policy",
+                "url": "/policy.html"
+            },
+            {
+                "@type": "WebPage",
+                "name": "Terms of Conditions",
+                "url": "/terms.html"
+            }
+        ]
+    }
+</script>
+</html>
